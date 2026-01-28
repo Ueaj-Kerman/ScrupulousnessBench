@@ -9,8 +9,8 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-RESULTS_DIR = Path("results")
-OUTPUT_DIR = Path("outputs")
+RESULTS_DIR = Path(__file__).parent.parent / "results"
+OUTPUT_DIR = Path(__file__).parent.parent / "outputs"
 
 
 def load_all_results():

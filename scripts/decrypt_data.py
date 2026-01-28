@@ -30,8 +30,8 @@ def load_encrypted_data():
     if _cache is not None:
         return _cache
 
-    enc_file = Path(__file__).parent / "data.enc"
-    data_dir = Path(__file__).parent / "data"
+    enc_file = Path(__file__).parent.parent / "data.enc"
+    data_dir = Path(__file__).parent.parent / "data"
 
     # If data/ exists, use it directly (development mode)
     if data_dir.exists() and any(data_dir.iterdir()):

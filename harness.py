@@ -34,7 +34,7 @@ try:
 except ImportError:
     MOONDREAM_AVAILABLE = False
 
-import decrypt_data
+from scripts import decrypt_data
 RESULTS_DIR = Path(__file__).parent / "results"
 
 GRADER_MODEL = "anthropic/claude-opus-4.5"

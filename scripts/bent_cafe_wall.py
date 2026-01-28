@@ -56,7 +56,8 @@ def create_slanted_cafe_wall(width=800, height=400, rows=8, cols=16, slant=6):
     return img
 
 if __name__ == '__main__':
+    from pathlib import Path
     img = create_slanted_cafe_wall(slant=8)
-    output_path = '/mnt/c/Users/devse/IdeaProjects/ScrupulousnessBench/outputs/bent_cafe_wall.png'
+    output_path = Path(__file__).parent.parent / "outputs" / "bent_cafe_wall.png"
     img.save(output_path)
     print(f"Saved to {output_path}")

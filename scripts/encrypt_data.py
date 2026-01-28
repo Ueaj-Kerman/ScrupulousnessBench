@@ -23,8 +23,8 @@ def get_key():
     return base64.urlsafe_b64encode(kdf.derive(PASSPHRASE))
 
 def encrypt_data():
-    data_dir = Path(__file__).parent / "data"
-    output_file = Path(__file__).parent / "data.enc"
+    data_dir = Path(__file__).parent.parent / "data"
+    output_file = Path(__file__).parent.parent / "data.enc"
 
     if not data_dir.exists():
         print("Error: data/ directory not found")

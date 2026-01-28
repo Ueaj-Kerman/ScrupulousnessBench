@@ -70,13 +70,13 @@ Models can include reasoning configuration:
 
 ```bash
 # Generate plots (light and dark themes)
-python plot_results.py results outputs
+python scripts/plot_results.py
 
 # Generate score grid
-python plot_grid.py results outputs
+python scripts/plot_grid.py
 
 # View in browser
-python server.py
+python server/server.py
 # Open http://localhost:8765
 ```
 
@@ -84,20 +84,23 @@ python server.py
 
 ```
 ScrupulousnessBench/
-├── harness.py          # Main benchmark harness
-├── server.py           # Web server for viewing results
-├── plot_results.py     # Generate bar chart visualizations
-├── plot_grid.py        # Generate score grid visualization
-├── data.enc            # Encrypted benchmark data
-├── encrypt_data.py     # Encrypt data/ directory
-├── decrypt_data.py     # Runtime decryption module
-├── results/            # Model evaluation results
+├── harness.py              # Main benchmark harness
+├── data.enc                # Encrypted benchmark data
+├── server/
+│   ├── server.py           # Web server for viewing results
+│   └── static/             # Web UI assets
+├── scripts/
+│   ├── plot_results.py     # Generate bar chart visualizations
+│   ├── plot_grid.py        # Generate score grid visualization
+│   ├── encrypt_data.py     # Encrypt data/ directory
+│   └── decrypt_data.py     # Runtime decryption module
+├── results/                # Model evaluation results
 │   └── *_results.json
-├── outputs/            # Generated visualizations
+├── outputs/                # Generated visualizations
 │   ├── scores_light.png
 │   ├── scores_dark.png
 │   └── score_grid.png
-└── static/             # Web UI assets
+└── images/                 # Documentation images
 ```
 
 ## Data Encryption
@@ -108,7 +111,7 @@ To modify the benchmark:
 
 1. Create a `data/` directory with your examples
 2. Add JSON + image files (see format below)
-3. Run `python encrypt_data.py` to generate `data.enc`
+3. Run `python scripts/encrypt_data.py` to generate `data.enc`
 4. Delete `data/` before committing
 
 ## Adding New Examples
@@ -153,7 +156,7 @@ This avoids potentially quantized third-party hosts.
 
 Run `python server.py` and open http://localhost:8765 to browse results interactively. The UI shows each example's image, the model responses, and grading explanations.
 
-![Web UI](webui.png)
+![Web UI](images/webui.png)
 
 ## License
 

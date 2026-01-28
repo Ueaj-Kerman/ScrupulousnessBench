@@ -224,8 +224,10 @@ def plot_results(models: dict, theme: str, output_path: str):
 
 
 def main():
-    results_dir = sys.argv[1] if len(sys.argv) > 1 else "results"
-    output_dir = sys.argv[2] if len(sys.argv) > 2 else "outputs"
+    default_results = Path(__file__).parent.parent / "results"
+    default_output = Path(__file__).parent.parent / "outputs"
+    results_dir = sys.argv[1] if len(sys.argv) > 1 else str(default_results)
+    output_dir = sys.argv[2] if len(sys.argv) > 2 else str(default_output)
 
     if not os.path.isdir(results_dir):
         print(f"Error: {results_dir} not found")
