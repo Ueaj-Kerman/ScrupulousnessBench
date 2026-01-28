@@ -4,6 +4,8 @@ A vision benchmark testing whether AI models carefully analyze images or fall fo
 
 ![Current Results](outputs/scores_dark.png)
 
+![Score Grid](outputs/score_grid.png)
+
 ## Overview
 
 ScrupulousnessBench presents models with deceptive visual questions where the obvious answer is usually wrong. It tests:
