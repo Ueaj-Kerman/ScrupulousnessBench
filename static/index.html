@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrupulousnessBench Data Curator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Examples</h2>
+            <div id="examples-list"></div>
+        </aside>
+
+        <main class="editor">
+            <h1>ScrupulousnessBench Curator</h1>
+
+            <div class="drop-zone" id="drop-zone" tabindex="0">
+                <div class="drop-content">
+                    <span class="drop-icon">🖼️</span>
+                    <p>Drag & drop image here</p>
+                    <p class="drop-hint">or click to select</p>
+                </div>
+                <img id="preview" class="preview hidden" alt="Preview">
+                <input type="file" id="file-input" accept="image/*" hidden>
+            </div>
+            <button type="button" id="paste-image" class="btn-small paste-btn" tabindex="0">Paste from Clipboard (Ctrl+V)</button>
+
+            <div class="form-group">
+                <label for="tweet">Tweet Text (optional)</label>
+                <textarea id="tweet" placeholder="Paste the tweet text here..." tabindex="1"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Candidate Question (auto-generated)</label>
+                <div id="candidate" class="candidate-box">
+                    <span class="placeholder">Enter tweet text to generate...</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="question">Question</label>
+                <textarea id="question" placeholder="Enter or edit the question..." tabindex="2"></textarea>
+                <button type="button" id="use-candidate" class="btn-small" tabindex="3">Use Candidate</button>
+            </div>
+
+            <div class="form-group">
+                <label for="answer">Answer</label>
+                <textarea id="answer" placeholder="Enter the correct answer..." tabindex="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Filename</label>
+                <div class="name-row">
+                    <input type="text" id="name" placeholder="auto-generated" tabindex="5">
+                    <button type="button" id="regenerate-name" class="btn-small" tabindex="6">Regenerate</button>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="button" id="clear" class="btn-secondary" tabindex="7">Clear</button>
+                <button type="button" id="save" class="btn-primary" tabindex="8">Save Example</button>
+            </div>
+
+            <div id="status" class="status hidden"></div>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
